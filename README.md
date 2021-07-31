@@ -1,1 +1,0 @@
-# Proovit66-koos-protsentidega
