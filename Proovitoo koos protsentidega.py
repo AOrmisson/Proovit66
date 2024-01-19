@@ -11,7 +11,11 @@ def text_to_word_combinations(filename: str):
     with open(filename, "r") as file:  # Loeb antud failist teksti sisse.
         text = file.read()
         text = text.lower()  # Muudab teksti kõik tähed väiketähtedeks.
-    words = re.findall(r"\w{4,}", text)  # Leiab tekstist kõik tühikuga eraldatud sõnad mis on 4 või rohkem tähte pikad.
+    new_string = ""
+    for letter in text:
+        if letter.isalpha() or letter == " ":
+            new_string += letter
+    words = re.findall(r"\w{4,}", new_string)  # Leiab tekstist kõik tühikuga eraldatud sõnad mis on 4 või rohkem tähte pikad.
     combinations = {}
     for word in words:
         for length in range(4, len(word) + 1):  # Tekitab vahemiku iga leitud sõna pikkuse kohta.
