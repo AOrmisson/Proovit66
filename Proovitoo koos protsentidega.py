@@ -28,7 +28,7 @@ total_sum_of_words = sum(combinations.values())
 sorted_items = sorted(combinations.items(), key=lambda x: x[1], reverse=True)
 sorted_items = sorted_items[:10]
 
- # Tabeli loomine:
+# Tabeli loomine:
 table_headers = ['Täheühend', 'Esinemise arv', 'Esinemise protsent']  # Loob tabeli esimese rea
 table_data = []
 
