@@ -3,19 +3,16 @@ import re
 import matplotlib.pyplot as plt
 from tabulate import tabulate
 
-def text_to_word_combinations(filename: str):
-    """
-    Write a program that takes input text and returns up to 10
-    most frequent letter compound with their percentage of occurrence presented as a table and as a bar chart.
-    """
+"""
+Write a program that takes input text and returns up to 10
+most frequent letter compound with their percentage of occurrence presented as a table and as a bar chart.
+"""
+filename = input("Enter a file name:")
+    
     with open(filename, "r") as file:  # Loeb antud failist teksti sisse.
         text = file.read()
         text = text.lower()  # Muudab teksti kõik tähed väiketähtedeks.
-    new_string = ""
-    for letter in text:
-        if letter.isalpha() or letter == " ":
-            new_string += letter
-    words = re.findall(r"\w{4,}", new_string)  # Leiab tekstist kõik tühikuga eraldatud sõnad mis on 4 või rohkem tähte pikad.
+    words = re.findall(r"\w{4,}", text)  # Leiab tekstist kõik tühikuga eraldatud sõnad mis on 4 või rohkem tähte pikad.
     combinations = {}
     for word in words:
         for length in range(4, len(word) + 1):  # Tekitab vahemiku iga leitud sõna pikkuse kohta.
@@ -75,3 +72,4 @@ def text_to_word_combinations(filename: str):
     plt.ylim(0, max_percentage)  # Pikendab tabelit 5% võrra.
     plt.tight_layout()
     plt.show()
+
