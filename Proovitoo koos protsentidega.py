@@ -11,7 +11,7 @@ filename = input("Enter a file name:")
 
 with open(filename, "r") as file:  # Loeb antud failist teksti sisse.
     text = file.read()
-     text = text.lower()  # Muudab teksti kõik tähed väiketähtedeks.
+    text = text.lower()  # Muudab teksti kõik tähed väiketähtedeks.
 words = re.findall(r"\w{4,}", text)  # Leiab tekstist kõik tühikuga eraldatud sõnad mis on 4 või rohkem tähte pikad.
 combinations = {}
 for word in words:
